@@ -38,8 +38,8 @@ class ProjectSelectionScreen extends StatelessWidget {
             title: Text(projectName),
             onTap: () {
               initializeFirebase(projectName);
-              Modular.to.navigate('/login');
-              print(projectName);
+              Modular.to.navigate('/login/');
+              print('Porjet selecionado: $projectName');
             },
           );
         }).toList(),
@@ -48,6 +48,7 @@ class ProjectSelectionScreen extends StatelessWidget {
   }
 
   void initializeFirebase(String projectName) {
+    print('Firebase Options: $FirebaseOptions');
     Firebase.initializeApp(
       name: projectName,
       options: firebaseConfigs[projectName]!,
